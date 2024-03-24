@@ -26,6 +26,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const userRoutes = require("./src/routes/userRoutes");
+const cors = require('cors')
 
 const app = express();
 
@@ -50,7 +51,7 @@ app.get("/", function (req, res) {
 });
 app.use("/user", userRoutes);
 
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
   console.log("Server is running on port " + PORT);
